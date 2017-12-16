@@ -1,5 +1,7 @@
 import sys 
-count=[]
+stopwords=['die', 'also', 'der', 'Putin','Vladimir','der','wo','gut','darin','Deutsche']
+#count=[]
+slovar ={}
 dot=[] # list of english words
 fd=open('dot', 'r')
 # read in list of english words
@@ -15,15 +17,25 @@ for line in fd.readlines():
 	line=line.strip()
 	Corpusde.append (line)
 	# tokenise the line
-	row = newline.split(' ')
+	row =line.split(' ')
 	# for each of the tokens
 	for token in row:
-		if token != '':
+		if token == '':
+			continue
 		# check if it is in the english wordlist
 		if token in dot:
-			print (token)
+			#print (token)
 		# if it is, take a count
-
-			count.append (token)
+			if token not in slovar:
+				slovar [token]=0
+			slovar[token]+=1
+	
+				
+				#count.append (token)
 					
-print (count)
+#print (count)
+print (slovar)
+for token in slovar:
+	if token in stopwords or token.isnumeric() or not token.isalnum():
+		continue
+	print (token , slovar [token]) 

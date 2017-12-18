@@ -48,7 +48,10 @@ for line in sys.stdin.readlines():
 	transliterated = row[1]
 
 	  # transliterate!!!!
-  
+  for c in table:
+		transliterated = transliterated.replace(c, table[c])
+	#set the 10th column to the transliterated form
+
 	row[9] = ('Tr=' + transliterated)
 
 	  #print out line (separated by tabs)

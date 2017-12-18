@@ -1,35 +1,15 @@
 import sys
+sent_id=1
 
-table = {'а':'a',
-	'б':'b',
-	'в':'v',
-	'г':'g',
-	'д':'d',
-	'е':'e',
-	'ё':'yo',
-  'ж':'zh',
-	'з':'z',
-	'и':'i',
-	'й':'y',
-	'к':'k',
-	'л':'l',
-	'м':'m',
-	'н':'n',
-	'о':'o',
-	'п':'p',
-	'р':'r',
-	'с':'s',
-	'т':'t',
-	'у':'u',
-	'ф':'f',
-	'х':'h',
-	'ц':'ts',
-	'ч':'ch',
-	'ш':'sh',
-	'щ':'tsch',
-	'э':'e',
-	'ю':'yu',
-	'я':'ya'}
+table = {'a':'a',
+	 'aː':'æ',
+	 'bˠ':'bˠ',
+	 'bʲ':'bʲ',
+	 'c':'c',
+	 'ç':'ç',
+	 'd̪ˠ''d̪ˠ',
+	 'dʲ':'d̠ʲ'
+	 
 
     #read through lines
 for line in sys.stdin.readlines():
@@ -46,9 +26,7 @@ for line in sys.stdin.readlines():
 	transliterated = row[1]
 
 	  # transliterate!!!!
-	for c in table:
-		transliterated = transliterated.replace(c, table[c])
-  	#set the 10th column to the transliterated form
+  
 	row[9] = ('Tr=' + transliterated)
 
 	  #print out line (separated by tabs)

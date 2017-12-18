@@ -24,14 +24,14 @@ table = {'b':'bˠ',
 	 'o':'ɔ',
 	 'u':'ʊ',
 	 'ia':'iə',
-	 'ua',
-	 'agha',
-	 'eabha',
-	 
-	 
-	 
-	 
-	 
+	 'ua':'uə',
+	 'agha':'əi',
+	 'eabha':'əu',
+	 'á':'aː',
+	 'é':'eː',
+	 'í':'iː',
+	 'ó':'oː',
+	 'ú':'uː'}
 
     #read through lines
 for line in sys.stdin.readlines():
